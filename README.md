@@ -1,4 +1,5 @@
 https://nz-birds-directory.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d0a7d09a-988a-4d59-87e3-58a406528566/deploy-status/main)](https://app.netlify.com/sites/nz-birds-directory/deploys)
 
 # Getting Started with Create React App
 
