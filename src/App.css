@@ -1,8 +1,122 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/public/Assets/Fonts/Neue\ Haas\ Grotesk\ Display\ Pro\ 65\ Medium.ttf')
+    format('truetype');
 }
 
-.App-logo {
+/* Apply the custom font to all text elements */
+* {
+  font-family: 'CustomFont', sans-serif;
+}
+
+.App {
+  text-align: center;
+  background-image: url('/public/Assets/Images/Background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.overlay {
+  background-image: url('/public/Assets/Images/Smaller Background.png'); /* Smaller background image */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  z-index: 1;
+  top: 5%;
+  left: 5%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content Styles */
+.hero {
+  position: relative;
+  z-index: 2; /* Make sure content is on top of the overlay */
+  margin-bottom: 30px;
+  margin-top: 30px;
+  height: 100%;
+  height: auto;
+}
+
+.app-name {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 48px;
+    height: auto;
+    margin-right: 10px;
+    transform: scaleX(-1);
+  }
+}
+
+.app-name h2 {
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 30px;
+  height: 36px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .icon {
+    opacity: 0.5;
+    width: 28px;
+    padding: 10px;
+  }
+}
+
+.search-bar h2 {
+  color: grey;
+  opacity: 0.5;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  flex-grow: 1; /* Take up the remaining space in the flex container */
+  text-align: left; /* Align the text to the left */
+  margin-right: 10px;
+}
+
+.body {
+  background-image: url('/public/Assets/Images/List\ Container.png');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 99.5%;
+  border-radius: 0px 0px 30px 30px;
+  background-position: center;
+  background-size: 100% 100%; /* Make sure the image covers the entire .body */
+}
+
+/* Add a media query for smaller screens if necessary
+@media (max-width: 768px) {
+  .App::before {
+    width: 50%;
+    max-width: 200px;
+  }
+} */
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +149,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
