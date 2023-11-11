@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import App from './App'
+import App from '../App'
 
 test('All components should be in the page', () => {
   render(<App />)
