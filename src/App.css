@@ -1,7 +1,18 @@
+:root {
+  --primary-color: rgb(112, 160, 112);
+  --secondary-color: white;
+  --text-color: rgb(68, 68, 68);
+  --text-opacity: 0.5;
+  --hover-color: rgb(112, 160, 112);
+  --active-color: green;
+}
+
 /* Apply the custom font to all text elements */
 * {
-  font-family: system-ui;
+  font-family: system-ui !important;
 }
+
+@import '~bootstrap-icons/font/bootstrap-icons.css';
 
 .App {
   text-align: center;
@@ -18,7 +29,7 @@
 }
 
 .overlay {
-  background-image: url('/public/Assets/Images/Smaller Background.png'); /* Smaller background image */
+  background-image: url('/public/Assets/Images/Body\ Container.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -35,238 +46,40 @@
 }
 
 /* Content Styles */
-.hero {
-  position: relative;
-  z-index: 2; /* Make sure content is on top of the overlay */
-  margin-bottom: 30px;
-  margin-top: 30px;
-  height: 100%;
-  height: auto;
-}
-
-.app-name {
-  display: flex;
-  align-items: center;
-
-  .icon {
-    width: 48px;
-    height: auto;
-    margin-right: 10px;
-    transform: scaleX(-1);
-  }
-}
-
-.app-name h2 {
-  color: white;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 30px;
-  height: 36px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  .icon {
-    opacity: 0.5;
-    width: 28px;
-    padding: 10px;
-    font-size: 20px;
-  }
-}
-
-.search-bar h2 {
-  color: grey;
-  opacity: 0.5;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 36px;
-  flex-grow: 1;
-  text-align: left;
-  margin-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 3px;
-}
-
 .body {
-  display: flex;
   background-image: url('/public/Assets/Images/List\ Container.png');
   background-repeat: no-repeat;
   height: 100%;
-  width: 99.5%;
-  border-radius: 0px 0px 30px 30px;
-  background-position: center;
+  width: 100%;
   background-size: 100% 100%;
+  background-position: center;
+  border-radius: 0px 0px 30px 30px;
 }
 
-.filters {
-  padding: 30px;
+.tile-button {
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .icon {
+    font-size: 20px;
     width: 28px;
+    color: var(--text-color);
   }
 }
 
-.filters p {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0;
-}
-
-.filters h3 {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-align: left;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: rgb(68, 68, 68);
-}
-
-.filter-button {
-  margin: 10px;
-  display: flex; /* Use flexbox to arrange img and p horizontally */
-  align-items: center; /* Center items vertically */
-  gap: 10px; /* Add some space between img and p */
-  border: none; /* Remove the button border */
-  background: none; /* Remove the button background */
-  padding: 10px;
-  color: rgb(68, 68, 68);
-  font-size: 20px;
-}
-
-.filter-button p {
-  padding-right: 5px;
-}
-.filter-button:hover {
-  background-color: rgb(112, 160, 112);
-  color: white;
-  border-radius: 30px;
-  opacity: 0.5;
-}
-
-.display {
-  flex: 1;
-  padding: 30px;
-}
-
-.sort {
-  display: flex;
-  justify-content: space-between; /* Distribute items to both ends (left and right) */
-}
-
-.sort-left {
-  display: flex;
-  gap: 10px;
-
-  .btn-light {
-    --bs-btn-border-color: black !important;
-    font-family: system-ui !important;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    color: rgb(68, 68, 68);
+.tile-button:hover {
+  .icon {
+    color: var(--hover-color);
   }
 }
 
-.sort-left h2 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 10px;
-}
-
-.reset-button {
-  padding: 10px;
-  background-color: white;
-  border-color: rgb(68, 68, 68);
-  border: 2px solid rgb(68, 68, 68); /* Define border explicitly */
-  border-radius: 30px;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 0px;
-  padding: 0;
-  color: rgb(68, 68, 68);
-  margin: 5px;
-  width: 60px;
-}
-
-.reset-button h3 {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 0px;
-  padding: 0;
-  color: rgb(68, 68, 68);
-  margin: 5px;
-}
-
-.reset-button:hover {
-  border-color: rgb(112, 160, 112);
-  color: rgb(112, 160, 112);
-}
-
-.sort-right {
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center;
-  gap: 20px; /* Add some space between items */
-
-  .btn-light {
-    --bs-btn-border-color: black !important;
-    font-family: system-ui !important;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    color: rgb(68, 68, 68);
-    --bs-btn-hover-color: rgb(112, 160, 112);
-    --bs-btn-hover-border-color: rgb(112, 160, 112);
-    --bs-btn-hover-bg: white;
-  }
-
-  .dropdown-item {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    color: rgb(68, 68, 68);
-  }
-
-  .tile-button {
-    border: none;
-    background: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center the icon */
-    align-items: center; /* Vertically center the icon */
-
-    .icon {
-      font-size: 20px;
-      width: 28px;
-      color: rgb(68, 68, 68);
-    }
-  }
-
-  .tile-button:hover {
-    .icon {
-      color: rgb(112, 160, 112);
-    }
-  }
-
-  .tile-button.active {
-    .icon {
-      color: green;
-    }
+.tile-button.active {
+  .icon {
+    color: var(--active-color);
   }
 }
 
@@ -276,5 +89,23 @@
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: green !important;
+  background-color: var(--active-color) !important;
+}
+
+.btn-light {
+  --bs-btn-border-color: black !important;
+  font-size: 14px !important;
+  color: var(--text-color);
+  --bs-btn-hover-color: var(--hover-color) !important;
+  --bs-btn-hover-border-color: var(--hover-color) !important;
+  --bs-btn-hover-bg: var(--secondary-color) !important;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.btn-outline-success {
+  --bs-btn-color: black !important;
 }

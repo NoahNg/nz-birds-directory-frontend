@@ -1,39 +1,74 @@
 import React from 'react'
 import './App.css'
 import Filters from './Filters'
+import { Row, Col, Container, Button, Stack, InputGroup, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import Sort from './Sort'
 
 function App() {
   return (
-    <div className='App' data-testid='app'>
+    <Container fluid className='App' data-testid='app'>
       <div className='overlay' data-testid='overlay'>
-        {' '}
-        <div className='hero'>
-          <div className='app-name' data-testid='appName'>
-            <img src='/Assets/Icons/Kiwi Silhouette.png' alt='Icon' className='icon' />
-            <h2>New Zealand Birds Directory</h2>
-          </div>
-          <div className='search-bar' data-testid='searchBar'>
-            <FontAwesomeIcon icon={icon({ name: 'magnifying-glass' })} className='icon' />
-            <h2>Search</h2>
-          </div>
-        </div>
-        <div className='body' data-testid='body'>
+        {/* Header Section */}
+        <Container fluid>
+          <Row
+            className='p-4 d-flex flex-fill justify-content-center align-items-center'
+            style={{ marginRight: 0 }}
+          >
+            <Col xs={12} sm={6} lg={4} className='mx-auto d-flex justify-content-center'>
+              <Stack direction='horizontal' gap={3}>
+                <img
+                  src='/Assets/Icons/Kiwi Silhouette.png'
+                  alt='Icon'
+                  className='icon'
+                  style={{
+                    width: '48px',
+                    height: 'auto',
+                    transform: 'scaleX(-1)',
+                  }}
+                />
+                <h4 className='mb-0 font-weight-bold text-white'>New Zealand Birds Directory</h4>
+              </Stack>
+            </Col>
+          </Row>
+          <Row
+            className='pb-4 d-flex flex-fill justify-content-center align-items-center'
+            style={{ marginRight: 0 }}
+          >
+            <Col xs={12} sm={6} lg={4} className='mx-auto'>
+              <InputGroup>
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={icon({ name: 'magnifying-glass' })} />
+                </InputGroup.Text>
+                <FormControl placeholder='Search' />
+              </InputGroup>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* Body Section */}
+        <Container fluid className='d-flex align-items-start body' data-testid='body'>
           <Filters />
-          <div className='display'>
-            <div className='sort'>
-              <div className='sort-left'>
-                <h2>50 Birds</h2>
-                <button className='reset-button'>RESET</button>
-              </div>
-              <Sort />
-            </div>
-          </div>
-        </div>
+
+          {/* Action Section */}
+          <Row
+            className='p-4 d-flex flex-fill justify-content-between align-items-center'
+            style={{ marginRight: 0 }}
+          >
+            <Col xs={12} sm={6} lg={4} className='d-flex justify-content-start '>
+              <Stack direction='horizontal' gap={3}>
+                <h5 className='p-2 mb-0'>50 Birds</h5>
+                <Button variant='light' className='p-2 rounded-pill '>
+                  RESET
+                </Button>
+              </Stack>
+            </Col>
+            <Sort />
+          </Row>
+        </Container>
       </div>
-    </div>
+    </Container>
   )
 }
 
