@@ -29,7 +29,7 @@
 }
 
 .overlay {
-  background-image: url('/public/Assets/Images/Smaller Background.png');
+  background-image: url('/public/Assets/Images/Body\ Container.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -51,7 +51,7 @@
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  background-size: 99.5% 99.5%;
+  background-size: 100% 100%;
   background-position: center;
   border-radius: 0px 0px 30px 30px;
 }
